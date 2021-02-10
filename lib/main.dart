@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todos_app/todo_entity.dart';
+import 'package:flutter_todos_app/todo_list_screen.dart';
 
 /*
 TODO:
@@ -18,7 +19,7 @@ class TodosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Todos App',
-      home: Scaffold(),
+      home: TodoListScreen(),
     );
   }
 }
