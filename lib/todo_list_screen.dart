@@ -12,6 +12,12 @@ class _TodoListScreenState extends State<TodoListScreen> {
     TodoEntity(title : 'Create test scenarios')
   ];
 
+  _onTodoToggle(TodoEntity todo, bool isChecked) {
+    setState(() {
+      todo.isDone = isChecked;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +25,8 @@ class _TodoListScreenState extends State<TodoListScreen> {
         title: Text('Todo List'),
       ),
       body: TodoList(
-        todoList: todoList
+        todoList: todoList,
+        onTodoToggle: _onTodoToggle
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
