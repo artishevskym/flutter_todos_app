@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todos_app/todo_entity.dart';
 
 /*
 TODO:
@@ -15,6 +16,8 @@ void main() => runApp(TodosApp());
 class TodosApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    TodoEntity entity = TodoEntity(title: '');
+
     return MaterialApp(
       title: 'Todos App',
       home: Scaffold(),
