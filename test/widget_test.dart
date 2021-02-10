@@ -10,6 +10,36 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_todos_app/main.dart';
 
+/*
+Feature: User is able to successfully add new todos to the list (just a title)
+
+Scenario1: Add todo to the list
+GIVEN I have launched the ToDoList app with no todos
+WHEN I add ‘Create test scenarios’ todo
+THEN the ‘Create test scenarios’ item must be added to the list
+
+Feature: User is able to check off todos when they’re finished which removes them from the list
+
+Scenario2: Remove todo from the list
+GIVEN I have launched the ToDoList app with ‘Create test scenarios’ item
+WHEN I tap ‘Create test scenarios’ item when it is finished
+THEN the ‘Create test scenarios’ item must be removed from the list
+
+End-to-end test
+
+Scenario3: Plan 3 MITs and execute it
+GIVEN I have launched the ToDoList app with no todos
+AND I have added ‘Create test scenarios’ todo
+AND I have added ‘Write an application’ todo
+AND I have added ‘Verify test scenarios’ todo
+WHEN I tap ‘Write an application’ todo
+THEN the ‘Write an application’ item must be removed from the list
+WHEN I tap ‘Verify test scenarios’ todo
+THEN the ‘Verify test scenarios’ item must be removed from the list
+WHEN I tap ‘Create test scenarios’ item when it is finished
+THEN the ‘Create test scenarios’ item must be removed from the list
+AND there is no more todos in the list
+ */
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
