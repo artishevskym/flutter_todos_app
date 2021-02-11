@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todos_app/add_todo_dialog.dart';
 import 'package:flutter_todos_app/todo_entity.dart';
 import 'package:flutter_todos_app/todo_list.dart';
 
@@ -8,14 +9,27 @@ class TodoListScreen extends StatefulWidget {
 }
 
 class _TodoListScreenState extends State<TodoListScreen> {
-  List<TodoEntity> todoList = [
-    TodoEntity(title : 'Create test scenarios')
-  ];
+  List<TodoEntity> todoList = [];
 
   _onTodoToggle(TodoEntity todo, bool isChecked) {
     setState(() {
       todo.isDone = isChecked;
     });
+  }
+
+  _addTodo() async {
+    final todo = await showDialog<TodoEntity>(
+      context: context,
+      builder: (BuildContext context) {
+        return AddTodoDialog();
+      },
+    );
+
+    if (todo != null) {
+      setState(() {
+        todoList.add(todo);
+      });
+    }
   }
 
   @override
@@ -25,12 +39,13 @@ class _TodoListScreenState extends State<TodoListScreen> {
         title: Text('Todo List'),
       ),
       body: TodoList(
-        todoList: todoList,
+        todoList: todoList.where((element) => !element.isDone).toList(),
         onTodoToggle: _onTodoToggle
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         tooltip: 'Add todo',
+        onPressed: _addTodo,
       ),
     );
   }

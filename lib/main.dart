@@ -6,11 +6,12 @@ import 'package:flutter_todos_app/todo_list_screen.dart';
 TODO:
 - [DONE] TodosApp
 - [DONE] TodoEntity
-- Todo screen
-- Todo list
-- Add todo dialog
-- Navigation to dialog
-- Remove done logic
+- [DONE] Todo screen
+- [DONE] Todo list
+- [DONE] Add todo dialog
+- [DONE] Navigation to dialog
+- [DONE] Remove done logic
+- [DONE] Test scenarios
  */
 void main() => runApp(TodosApp());
 
